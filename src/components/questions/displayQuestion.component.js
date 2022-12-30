@@ -7,7 +7,7 @@ export default function DisplayQuestion({ aQuestion, answer, correct}) {
     
     function checkAnswer(answer, correctAns) {
         setSelected(answer);
-        if(answer == correctAns) {
+        if(answer === correctAns) {
             setMessage("Correct answer")
         }else {
             setMessage("Incorrect answer")
