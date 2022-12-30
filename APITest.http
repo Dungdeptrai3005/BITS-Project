@@ -1,0 +1,46 @@
+POST http://localhost:5000/api/auth/signup
+content-type: application/json
+
+{
+    "username": "kietduong1",
+    "email": "kietduong1@gmail.com",
+    "password": "kietduong",
+    "roles": ["user"]
+}
+
+###
+POST http://localhost:5000/api/auth/signup
+content-type: application/json
+
+{
+    "username": "kietduong2",
+    "email": "kietduonganh2@gmail.com",
+    "password": "kietduong",
+    "roles": ["admin"]
+}
+
+###
+POST http://localhost:5000/api/auth/signin
+content-type: application/json
+
+{
+    "username": "kietduong1",
+    "password": "kietduong"
+}
+
+###
+POST http://localhost:5000/api/auth/signin
+content-type: application/json
+
+{
+    "username": "kietduong2",
+    "password": "kietduong"
+}
+
+###
+GET http://localhost:5000/api/user
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWViODFhMTgzZTZlYmQ5ZWQxODMyMyIsImlhdCI6MTY3MjM5NDgzNywiZXhwIjoxNjcyNDgxMjM3fQ.GE8Q1Yv3TXfmbU6fBPCSB8qu20jLjCVbf12rXxHltls
+
+###
+GET http://localhost:5000/api/admin
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYWViODFkMTgzZTZlYmQ5ZWQxODMyOSIsImlhdCI6MTY3MjM5NDgwOSwiZXhwIjoxNjcyNDgxMjA5fQ.wgTyx3WQgmfvsOjqrudgMwFHn43nohB8Y8AzoVGkhCA
