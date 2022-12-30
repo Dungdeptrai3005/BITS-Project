@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const dbConfig = require("./app/config/db.config");
+const dbConfig = require("./config/db.config");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
-const db = require("./app/models");
+const db = require("./models");
 const Role = db.role;
 
 db.mongoose
@@ -39,11 +39,11 @@ app.get("/", (req, res) => {
 });
 
 // routes
-require("./app/routes/auth.route")(app);
-require("./app/routes/Course.route")(app);
-require("./app/routes/Lesson.route")(app);
-require("./app/routes/Question.route")(app);
-require("./app/routes/User.route")(app);
+require("./routes/auth.route")(app);
+require("./routes/Course.route")(app);
+require("./routes/Lesson.route")(app);
+require("./routes/Question.route")(app);
+require("./routes/User.route")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
